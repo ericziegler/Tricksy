@@ -8,17 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		78F6C869290F098E002012DC /* TricksyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C868290F098E002012DC /* TricksyApp.swift */; };
-		78F6C86B290F098E002012DC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C86A290F098E002012DC /* ContentView.swift */; };
 		78F6C86D290F0990002012DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78F6C86C290F0990002012DC /* Assets.xcassets */; };
 		78F6C870290F0990002012DC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78F6C86F290F0990002012DC /* Preview Assets.xcassets */; };
+		78F6C87B290F0B24002012DC /* TreatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C87A290F0B24002012DC /* TreatViewModel.swift */; };
+		78F6C87D290F0B3E002012DC /* TreatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C87C290F0B3E002012DC /* TreatView.swift */; };
+		78F6C881290F0B9F002012DC /* ButtonComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C880290F0B9F002012DC /* ButtonComponents.swift */; };
+		78F6C883290F0BD5002012DC /* ColorComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C882290F0BD5002012DC /* ColorComponents.swift */; };
+		78F6C886290F11F3002012DC /* Creepster-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78F6C885290F11F3002012DC /* Creepster-Regular.ttf */; };
+		78F6C889290F1281002012DC /* FontComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C888290F1281002012DC /* FontComponents.swift */; };
+		78F6C88C290F13FC002012DC /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C88B290F13FC002012DC /* HapticsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		78F6C865290F098E002012DC /* Tricksy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tricksy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78F6C868290F098E002012DC /* TricksyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TricksyApp.swift; sourceTree = "<group>"; };
-		78F6C86A290F098E002012DC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		78F6C86C290F0990002012DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78F6C86F290F0990002012DC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		78F6C87A290F0B24002012DC /* TreatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatViewModel.swift; sourceTree = "<group>"; };
+		78F6C87C290F0B3E002012DC /* TreatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatView.swift; sourceTree = "<group>"; };
+		78F6C880290F0B9F002012DC /* ButtonComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponents.swift; sourceTree = "<group>"; };
+		78F6C882290F0BD5002012DC /* ColorComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorComponents.swift; sourceTree = "<group>"; };
+		78F6C885290F11F3002012DC /* Creepster-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Creepster-Regular.ttf"; sourceTree = "<group>"; };
+		78F6C887290F120D002012DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		78F6C888290F1281002012DC /* FontComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontComponents.swift; sourceTree = "<group>"; };
+		78F6C88B290F13FC002012DC /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +64,10 @@
 		78F6C867290F098E002012DC /* Tricksy */ = {
 			isa = PBXGroup;
 			children = (
+				78F6C887290F120D002012DC /* Info.plist */,
 				78F6C877290F09C3002012DC /* App */,
-				78F6C878290F09D2002012DC /* Views */,
+				78F6C878290F09D2002012DC /* Modules */,
+				78F6C87E290F0B6C002012DC /* Components */,
 				78F6C876290F09AD002012DC /* Resources */,
 			);
 			path = Tricksy;
@@ -69,8 +84,9 @@
 		78F6C876290F09AD002012DC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				78F6C86E290F0990002012DC /* Preview Content */,
+				78F6C884290F11EA002012DC /* Fonts */,
 				78F6C86C290F0990002012DC /* Assets.xcassets */,
+				78F6C86E290F0990002012DC /* Preview Content */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -83,12 +99,56 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		78F6C878290F09D2002012DC /* Views */ = {
+		78F6C878290F09D2002012DC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				78F6C86A290F098E002012DC /* ContentView.swift */,
+				78F6C879290F0B15002012DC /* Treat */,
 			);
-			path = Views;
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		78F6C879290F0B15002012DC /* Treat */ = {
+			isa = PBXGroup;
+			children = (
+				78F6C87C290F0B3E002012DC /* TreatView.swift */,
+				78F6C87A290F0B24002012DC /* TreatViewModel.swift */,
+			);
+			path = Treat;
+			sourceTree = "<group>";
+		};
+		78F6C87E290F0B6C002012DC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				78F6C87F290F0B88002012DC /* UI */,
+				78F6C88A290F13EE002012DC /* AV */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		78F6C87F290F0B88002012DC /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				78F6C880290F0B9F002012DC /* ButtonComponents.swift */,
+				78F6C882290F0BD5002012DC /* ColorComponents.swift */,
+				78F6C888290F1281002012DC /* FontComponents.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		78F6C884290F11EA002012DC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				78F6C885290F11F3002012DC /* Creepster-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		78F6C88A290F13EE002012DC /* AV */ = {
+			isa = PBXGroup;
+			children = (
+				78F6C88B290F13FC002012DC /* HapticsManager.swift */,
+			);
+			path = AV;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +211,7 @@
 			files = (
 				78F6C870290F0990002012DC /* Preview Assets.xcassets in Resources */,
 				78F6C86D290F0990002012DC /* Assets.xcassets in Resources */,
+				78F6C886290F11F3002012DC /* Creepster-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,8 +222,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78F6C86B290F098E002012DC /* ContentView.swift in Sources */,
+				78F6C889290F1281002012DC /* FontComponents.swift in Sources */,
+				78F6C87B290F0B24002012DC /* TreatViewModel.swift in Sources */,
+				78F6C88C290F13FC002012DC /* HapticsManager.swift in Sources */,
+				78F6C87D290F0B3E002012DC /* TreatView.swift in Sources */,
 				78F6C869290F098E002012DC /* TricksyApp.swift in Sources */,
+				78F6C883290F0BD5002012DC /* ColorComponents.swift in Sources */,
+				78F6C881290F0B9F002012DC /* ButtonComponents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +360,7 @@
 				DEVELOPMENT_TEAM = MJA8334VZT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tricksy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -326,6 +393,7 @@
 				DEVELOPMENT_TEAM = MJA8334VZT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tricksy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

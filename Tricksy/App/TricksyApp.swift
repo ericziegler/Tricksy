@@ -11,7 +11,7 @@ import SwiftUI
 struct TricksyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TreatView()
         }
     }
 }
