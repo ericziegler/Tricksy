@@ -20,6 +20,9 @@
 		78F6C890290F1645002012DC /* TreatNight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C88F290F1645002012DC /* TreatNight.swift */; };
 		78F6C893290F16C4002012DC /* DateFormatterComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C892290F16C4002012DC /* DateFormatterComponents.swift */; };
 		78F6C897290F17C2002012DC /* TreatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C896290F17C2002012DC /* TreatService.swift */; };
+		78F6C89A290F3032002012DC /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C899290F3032002012DC /* MenuViewModel.swift */; };
+		78F6C89C290F303A002012DC /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C89B290F303A002012DC /* MenuView.swift */; };
+		78F6C89F290F3E1F002012DC /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C89E290F3E1F002012DC /* MenuItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		78F6C88F290F1645002012DC /* TreatNight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatNight.swift; sourceTree = "<group>"; };
 		78F6C892290F16C4002012DC /* DateFormatterComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterComponents.swift; sourceTree = "<group>"; };
 		78F6C896290F17C2002012DC /* TreatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatService.swift; sourceTree = "<group>"; };
+		78F6C899290F3032002012DC /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		78F6C89B290F303A002012DC /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		78F6C89E290F3E1F002012DC /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				78F6C879290F0B15002012DC /* Treat */,
+				78F6C898290F3025002012DC /* Menu */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -164,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				78F6C88E290F163A002012DC /* Treat */,
+				78F6C89D290F3E0B002012DC /* Menu */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -190,6 +198,23 @@
 				78F6C896290F17C2002012DC /* TreatService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		78F6C898290F3025002012DC /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				78F6C89B290F303A002012DC /* MenuView.swift */,
+				78F6C899290F3032002012DC /* MenuViewModel.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		78F6C89D290F3E0B002012DC /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				78F6C89E290F3E1F002012DC /* MenuItem.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,10 +289,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				78F6C897290F17C2002012DC /* TreatService.swift in Sources */,
+				78F6C89C290F303A002012DC /* MenuView.swift in Sources */,
 				78F6C893290F16C4002012DC /* DateFormatterComponents.swift in Sources */,
 				78F6C889290F1281002012DC /* FontComponents.swift in Sources */,
 				78F6C87B290F0B24002012DC /* TreatViewModel.swift in Sources */,
 				78F6C88C290F13FC002012DC /* HapticsManager.swift in Sources */,
+				78F6C89F290F3E1F002012DC /* MenuItem.swift in Sources */,
+				78F6C89A290F3032002012DC /* MenuViewModel.swift in Sources */,
 				78F6C87D290F0B3E002012DC /* TreatView.swift in Sources */,
 				78F6C869290F098E002012DC /* TricksyApp.swift in Sources */,
 				78F6C883290F0BD5002012DC /* ColorComponents.swift in Sources */,
