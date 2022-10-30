@@ -17,6 +17,9 @@
 		78F6C886290F11F3002012DC /* Creepster-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78F6C885290F11F3002012DC /* Creepster-Regular.ttf */; };
 		78F6C889290F1281002012DC /* FontComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C888290F1281002012DC /* FontComponents.swift */; };
 		78F6C88C290F13FC002012DC /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C88B290F13FC002012DC /* HapticsManager.swift */; };
+		78F6C890290F1645002012DC /* TreatNight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C88F290F1645002012DC /* TreatNight.swift */; };
+		78F6C893290F16C4002012DC /* DateFormatterComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C892290F16C4002012DC /* DateFormatterComponents.swift */; };
+		78F6C897290F17C2002012DC /* TreatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C896290F17C2002012DC /* TreatService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		78F6C887290F120D002012DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		78F6C888290F1281002012DC /* FontComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontComponents.swift; sourceTree = "<group>"; };
 		78F6C88B290F13FC002012DC /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		78F6C88F290F1645002012DC /* TreatNight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatNight.swift; sourceTree = "<group>"; };
+		78F6C892290F16C4002012DC /* DateFormatterComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterComponents.swift; sourceTree = "<group>"; };
+		78F6C896290F17C2002012DC /* TreatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,9 +70,10 @@
 		78F6C867290F098E002012DC /* Tricksy */ = {
 			isa = PBXGroup;
 			children = (
-				78F6C887290F120D002012DC /* Info.plist */,
 				78F6C877290F09C3002012DC /* App */,
-				78F6C878290F09D2002012DC /* Modules */,
+				78F6C878290F09D2002012DC /* UI */,
+				78F6C88D290F1632002012DC /* Data */,
+				78F6C894290F17B1002012DC /* Services */,
 				78F6C87E290F0B6C002012DC /* Components */,
 				78F6C876290F09AD002012DC /* Resources */,
 			);
@@ -84,6 +91,7 @@
 		78F6C876290F09AD002012DC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				78F6C887290F120D002012DC /* Info.plist */,
 				78F6C884290F11EA002012DC /* Fonts */,
 				78F6C86C290F0990002012DC /* Assets.xcassets */,
 				78F6C86E290F0990002012DC /* Preview Content */,
@@ -99,12 +107,12 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		78F6C878290F09D2002012DC /* Modules */ = {
+		78F6C878290F09D2002012DC /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				78F6C879290F0B15002012DC /* Treat */,
 			);
-			path = Modules;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		78F6C879290F0B15002012DC /* Treat */ = {
@@ -119,8 +127,9 @@
 		78F6C87E290F0B6C002012DC /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				78F6C87F290F0B88002012DC /* UI */,
 				78F6C88A290F13EE002012DC /* AV */,
+				78F6C891290F16B9002012DC /* Foundation */,
+				78F6C87F290F0B88002012DC /* UI */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -149,6 +158,38 @@
 				78F6C88B290F13FC002012DC /* HapticsManager.swift */,
 			);
 			path = AV;
+			sourceTree = "<group>";
+		};
+		78F6C88D290F1632002012DC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				78F6C88E290F163A002012DC /* Treat */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		78F6C88E290F163A002012DC /* Treat */ = {
+			isa = PBXGroup;
+			children = (
+				78F6C88F290F1645002012DC /* TreatNight.swift */,
+			);
+			path = Treat;
+			sourceTree = "<group>";
+		};
+		78F6C891290F16B9002012DC /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				78F6C892290F16C4002012DC /* DateFormatterComponents.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		78F6C894290F17B1002012DC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				78F6C896290F17C2002012DC /* TreatService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,12 +263,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78F6C897290F17C2002012DC /* TreatService.swift in Sources */,
+				78F6C893290F16C4002012DC /* DateFormatterComponents.swift in Sources */,
 				78F6C889290F1281002012DC /* FontComponents.swift in Sources */,
 				78F6C87B290F0B24002012DC /* TreatViewModel.swift in Sources */,
 				78F6C88C290F13FC002012DC /* HapticsManager.swift in Sources */,
 				78F6C87D290F0B3E002012DC /* TreatView.swift in Sources */,
 				78F6C869290F098E002012DC /* TricksyApp.swift in Sources */,
 				78F6C883290F0BD5002012DC /* ColorComponents.swift in Sources */,
+				78F6C890290F1645002012DC /* TreatNight.swift in Sources */,
 				78F6C881290F0B9F002012DC /* ButtonComponents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

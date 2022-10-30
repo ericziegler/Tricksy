@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TreatView: View {
     
-    var viewModel = TreatViewModel()
+    @StateObject var viewModel = TreatViewModel()
     
     var body: some View {
         ZStack {
@@ -35,14 +35,14 @@ struct TreatView: View {
                                 .font(.creepsterFont(size: 44))
                                 .fontWeight(.bold)
                                 .foregroundColor(Color.appLight)
-                            Text("0")
+                            Text("\(viewModel.treatNight.deliveryTimes.count)")
                                 .font(Font.creepsterFont(size: 175))
                                 .foregroundColor(Color.appMain)
                         }
                     )
                 ActionButton(actionText: "Deliver Treat") {
                     HapticsManager.strongHaptic()
-                    print("TREAT DELIVERED")
+                    viewModel.addToCount()
                 }
             }
             .padding(.top, 16)

@@ -1,12 +1,12 @@
 //
-//  TreatViewModel.swift
+//  DateFormatter.swift
 //  Tricksy
 //
 //  Created by Eric Ziegler on 10/30/22.
 //
 
-import SwiftUI
+import Foundation
 
-class TreatViewModel {
+extension DateFormatter {
     
 }
