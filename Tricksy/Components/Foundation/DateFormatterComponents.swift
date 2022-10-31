@@ -8,5 +8,11 @@
 import Foundation
 
 extension DateFormatter {
+ 
+    static var graph: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "h:mm"
+        return formatter
+    }
     
 }

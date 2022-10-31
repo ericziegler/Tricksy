@@ -15,7 +15,7 @@ struct TreatView: View {
     var body: some View {
         ZStack {
             Color.appDark.edgesIgnoringSafeArea(.all)
-            VStack(spacing: 16) {
+            VStack(spacing: 0) {
                 HStack {
                     Button {
                         HapticsManager.lightHaptic()
@@ -31,7 +31,7 @@ struct TreatView: View {
                 Color.clear
                     .overlay(
                         VStack {
-                            Text("TREATS DELIVERED")
+                            Text("TRICK OR TREATERS")
                                 .font(.creepsterFont(size: 44))
                                 .fontWeight(.bold)
                                 .foregroundColor(Color.appLight)
@@ -52,9 +52,13 @@ struct TreatView: View {
                 switch sheet {
                 case .menu:
                     MenuView(selectedMenuItem: $selectedMenuItem)
-                    .presentationDetents([.medium, .fraction(0.18)])
+                        .presentationDetents([.medium, .height(146)])
                 case .graph:
-                    GraphView()
+                    GraphView(treatNight: viewModel.treatNight)
+                        .presentationDetents([.medium, .height(385)])
+                        .onDisappear {
+                            viewModel.modalSheet = nil
+                        }
                 }
             })
             .alert("Reset All Data?", isPresented: $viewModel.showingResetAlert, actions: {

@@ -11,13 +11,7 @@ struct MenuView: View {
     @Environment(\.dismiss) private var dismiss
     
     @ObservedObject var viewModel = MenuViewModel()
-    
     @Binding var selectedMenuItem: MenuItem
-//    var menuItemTapped: ((_ menuItem: MenuItem) -> ())?
-    
-//    init(menuItemTapped: ((_ menuItem: MenuItem) -> ())? = nil) {
-//        self.menuItemTapped = menuItemTapped
-//    }
     
     var body: some View {
         ZStack {
@@ -35,8 +29,8 @@ struct MenuView: View {
                 .listRowSeparator(.hidden)
                 .onTapGesture {
                     HapticsManager.lightHaptic()
-                    dismiss()
                     self.selectedMenuItem = menuItem
+                    dismiss()
                 }
             }
             .listStyle(.plain)

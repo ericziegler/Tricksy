@@ -25,6 +25,7 @@
 		78F6C89F290F3E1F002012DC /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C89E290F3E1F002012DC /* MenuItem.swift */; };
 		78F6C8A2290F7745002012DC /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C8A1290F7745002012DC /* GraphView.swift */; };
 		78F6C8A4290F7750002012DC /* GraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C8A3290F7750002012DC /* GraphViewModel.swift */; };
+		78F6C8A7290FE996002012DC /* GraphData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C8A6290FE996002012DC /* GraphData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		78F6C89E290F3E1F002012DC /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		78F6C8A1290F7745002012DC /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		78F6C8A3290F7750002012DC /* GraphViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewModel.swift; sourceTree = "<group>"; };
+		78F6C8A6290FE996002012DC /* GraphData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				78F6C88E290F163A002012DC /* Treat */,
+				78F6C8A5290FE98B002012DC /* Graph */,
 				78F6C89D290F3E0B002012DC /* Menu */,
 			);
 			path = Data;
@@ -227,6 +230,14 @@
 			children = (
 				78F6C8A1290F7745002012DC /* GraphView.swift */,
 				78F6C8A3290F7750002012DC /* GraphViewModel.swift */,
+			);
+			path = Graph;
+			sourceTree = "<group>";
+		};
+		78F6C8A5290FE98B002012DC /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				78F6C8A6290FE996002012DC /* GraphData.swift */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -308,6 +319,7 @@
 				78F6C889290F1281002012DC /* FontComponents.swift in Sources */,
 				78F6C87B290F0B24002012DC /* TreatViewModel.swift in Sources */,
 				78F6C8A4290F7750002012DC /* GraphViewModel.swift in Sources */,
+				78F6C8A7290FE996002012DC /* GraphData.swift in Sources */,
 				78F6C88C290F13FC002012DC /* HapticsManager.swift in Sources */,
 				78F6C89F290F3E1F002012DC /* MenuItem.swift in Sources */,
 				78F6C89A290F3032002012DC /* MenuViewModel.swift in Sources */,
@@ -443,7 +455,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"Tricksy/Preview Content\"";
 				DEVELOPMENT_TEAM = MJA8334VZT;
 				ENABLE_PREVIEWS = YES;
@@ -477,7 +489,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"Tricksy/Preview Content\"";
 				DEVELOPMENT_TEAM = MJA8334VZT;
 				ENABLE_PREVIEWS = YES;
