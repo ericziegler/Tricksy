@@ -10,6 +10,7 @@ import SwiftUI
 struct TreatView: View {
     
     @StateObject var viewModel = TreatViewModel()
+    @State var selectedMenuItem: MenuItem = MenuItem.none
     
     var body: some View {
         ZStack {
@@ -45,15 +46,25 @@ struct TreatView: View {
                 }
             }
             .padding(.top, 16)
-            .sheet(item: $viewModel.modalSheet) { sheet in
+            .sheet(item: $viewModel.modalSheet, onDismiss: {
+                self.viewModel.handleMenuItemTapped(self.selectedMenuItem)
+            }, content: { sheet in
                 switch sheet {
                 case .menu:
-                    MenuView { menuItem in
-                        viewModel.handleMenuItemTapped(menuItem)
-                    }
+                    MenuView(selectedMenuItem: $selectedMenuItem)
                     .presentationDetents([.medium, .fraction(0.18)])
+                case .graph:
+                    GraphView()
                 }
-            }            
+            })
+            .alert("Reset All Data?", isPresented: $viewModel.showingResetAlert, actions: {
+                Button("Remove Data", role: .destructive) {
+                    viewModel.removeAllData()
+                }
+                Button("Cancel", role: .cancel) { }
+            }, message: {
+                Text("This will permanently remove all trick-or-treat data.")
+            })
         }
         .preferredColorScheme(.dark)
     }

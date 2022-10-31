@@ -14,6 +14,7 @@ enum MenuItem: CaseIterable, Identifiable {
     case graph
     case undoLastTreat
     case resetAll
+    case none
     
     var displayText: String {
         switch self {
@@ -23,6 +24,8 @@ enum MenuItem: CaseIterable, Identifiable {
             return "Undo Last Treat"
         case .resetAll:
             return "Reset All Data"
+        default:
+            return ""
         }
     }
     
@@ -43,6 +46,8 @@ enum MenuItem: CaseIterable, Identifiable {
             return "arrow.uturn.backward"
         case .resetAll:
             return "clear"
+        default:
+            return ""
         }
     }
     

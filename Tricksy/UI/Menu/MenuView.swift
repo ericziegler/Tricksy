@@ -12,9 +12,12 @@ struct MenuView: View {
     
     @ObservedObject var viewModel = MenuViewModel()
     
-    init(menuItemTapped: ((_ menuItem: MenuItem) -> ())? = nil) {
-        self.viewModel = MenuViewModel(menuItemTapped: menuItemTapped)
-    }
+    @Binding var selectedMenuItem: MenuItem
+//    var menuItemTapped: ((_ menuItem: MenuItem) -> ())?
+    
+//    init(menuItemTapped: ((_ menuItem: MenuItem) -> ())? = nil) {
+//        self.menuItemTapped = menuItemTapped
+//    }
     
     var body: some View {
         ZStack {
@@ -31,9 +34,9 @@ struct MenuView: View {
                 .listRowBackground(Color.black)
                 .listRowSeparator(.hidden)
                 .onTapGesture {
-                    if viewModel.handleMenuItemTapped(menuItem) {
-                        dismiss()
-                    }
+                    HapticsManager.lightHaptic()
+                    dismiss()
+                    self.selectedMenuItem = menuItem
                 }
             }
             .listStyle(.plain)
@@ -47,21 +50,12 @@ struct MenuView: View {
             //            .background(Color.black)
             //        }
             .background(Color.black.edgesIgnoringSafeArea(.all))
-            .alert("Reset All Data?", isPresented: $viewModel.showingResetAlert, actions: {
-                Button("Remove Data", role: .destructive) {
-                    viewModel.resetAllData()
-                    dismiss()
-                }
-                Button("Cancel", role: .cancel) { }
-            }, message: {
-                Text("This will permanently remove all trick-or-treat data.")
-            })
         }
     }
 }
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView()
+        MenuView(selectedMenuItem: .constant(MenuItem.graph))
     }
 }

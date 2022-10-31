@@ -13,6 +13,7 @@ class TreatViewModel: ObservableObject {
     
     enum ModalSheet: String, Identifiable {
         case menu = "menu"
+        case graph = "graph"
         
         var id: String {
             return self.rawValue
@@ -24,6 +25,7 @@ class TreatViewModel: ObservableObject {
     private let service = TreatService()
     @Published var treatNight = TreatNight()
     @Published var modalSheet: ModalSheet?
+    @Published var showingResetAlert = false
     
     // MARK: - Init
     
@@ -59,14 +61,20 @@ class TreatViewModel: ObservableObject {
     
     // MARK: - Menu Actions
     
-    func handleMenuItemTapped(_ menuItem: MenuItem) {
+    func handleMenuItemTapped(_ menuItem: MenuItem?) {
+        guard let menuItem = menuItem else {
+            return
+        }
+        
         switch menuItem {
         case .graph:
-            print("GRAPH")
+            modalSheet = .graph
         case .undoLastTreat:
             removeLastTreat()
         case .resetAll:
-            removeAllData()
+            showingResetAlert = true
+        default:
+            print("No menu item selected.")
         }
     }
     

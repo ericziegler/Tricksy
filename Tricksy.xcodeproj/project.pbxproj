@@ -23,6 +23,8 @@
 		78F6C89A290F3032002012DC /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C899290F3032002012DC /* MenuViewModel.swift */; };
 		78F6C89C290F303A002012DC /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C89B290F303A002012DC /* MenuView.swift */; };
 		78F6C89F290F3E1F002012DC /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C89E290F3E1F002012DC /* MenuItem.swift */; };
+		78F6C8A2290F7745002012DC /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C8A1290F7745002012DC /* GraphView.swift */; };
+		78F6C8A4290F7750002012DC /* GraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C8A3290F7750002012DC /* GraphViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		78F6C899290F3032002012DC /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		78F6C89B290F303A002012DC /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		78F6C89E290F3E1F002012DC /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		78F6C8A1290F7745002012DC /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		78F6C8A3290F7750002012DC /* GraphViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				78F6C879290F0B15002012DC /* Treat */,
+				78F6C8A0290F7735002012DC /* Graph */,
 				78F6C898290F3025002012DC /* Menu */,
 			);
 			path = UI;
@@ -217,6 +222,15 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		78F6C8A0290F7735002012DC /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				78F6C8A1290F7745002012DC /* GraphView.swift */,
+				78F6C8A3290F7750002012DC /* GraphViewModel.swift */,
+			);
+			path = Graph;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -293,10 +307,12 @@
 				78F6C893290F16C4002012DC /* DateFormatterComponents.swift in Sources */,
 				78F6C889290F1281002012DC /* FontComponents.swift in Sources */,
 				78F6C87B290F0B24002012DC /* TreatViewModel.swift in Sources */,
+				78F6C8A4290F7750002012DC /* GraphViewModel.swift in Sources */,
 				78F6C88C290F13FC002012DC /* HapticsManager.swift in Sources */,
 				78F6C89F290F3E1F002012DC /* MenuItem.swift in Sources */,
 				78F6C89A290F3032002012DC /* MenuViewModel.swift in Sources */,
 				78F6C87D290F0B3E002012DC /* TreatView.swift in Sources */,
+				78F6C8A2290F7745002012DC /* GraphView.swift in Sources */,
 				78F6C869290F098E002012DC /* TricksyApp.swift in Sources */,
 				78F6C883290F0BD5002012DC /* ColorComponents.swift in Sources */,
 				78F6C890290F1645002012DC /* TreatNight.swift in Sources */,
