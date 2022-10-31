@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct MenuView: View {
+    @Environment(\.dismiss) private var dismiss
     
-    private var viewModel = MenuViewModel()
+    var viewModel = MenuViewModel()
     
     var body: some View {
         NavigationStack {
@@ -23,25 +24,17 @@ struct MenuView: View {
                 }
                 .listRowBackground(Color.appDark)
                 .onTapGesture {
-                    print("\(menuItem.displayText)")
+                    dismiss()
                 }
             }
-            .padding()
-            .navigationTitle("Tricksy")
-            .toolbar {
-                Button {
-                    print("CLOSE")
-                } label: {
-                    Image(systemName: "xmark")
-                }
-                .padding(.all, 16)
-            }
+            .navigationTitle("Options")
             .toolbarColorScheme(.dark, for: .navigationBar)
             .toolbarBackground(Color.black, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .scrollContentBackground(.hidden)
             .background(Color.black)
         }
+        .presentationDetents([.medium, .fraction(0.34)])
     }
 }
 

@@ -19,7 +19,7 @@ struct TreatView: View {
                 HStack {
                     Button {
                         HapticsManager.lightHaptic()
-                        print("SHOW MENU")
+                        viewModel.modalSheet = .menu
                     } label: {
                         Image(systemName: "line.3.horizontal")
                     }
@@ -46,6 +46,12 @@ struct TreatView: View {
                 }
             }
             .padding(.top, 16)
+            .sheet(item: $viewModel.modalSheet) { sheet in
+                switch sheet {
+                case .menu:
+                    MenuView()
+                }
+            }
         }
     }
 }

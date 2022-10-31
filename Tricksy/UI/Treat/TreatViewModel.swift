@@ -9,10 +9,21 @@ import SwiftUI
 
 class TreatViewModel: ObservableObject {
     
+    // MARK: - Enums
+    
+    enum ModalSheet: String, Identifiable {
+        case menu = "menu"
+        
+        var id: String {
+            return self.rawValue
+        }
+    }
+    
     // MARK: - Properties
     
     private let service = TreatService()
     @Published var treatNight = TreatNight()
+    @Published var modalSheet: ModalSheet?
     
     // MARK: - Init
     
