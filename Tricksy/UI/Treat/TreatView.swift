@@ -13,8 +13,7 @@ struct TreatView: View {
     
     var body: some View {
         ZStack {
-            Color.appDark
-                .edgesIgnoringSafeArea(.all)
+            Color.appDark.edgesIgnoringSafeArea(.all)
             VStack(spacing: 16) {
                 HStack {
                     Button {
@@ -49,10 +48,14 @@ struct TreatView: View {
             .sheet(item: $viewModel.modalSheet) { sheet in
                 switch sheet {
                 case .menu:
-                    MenuView()
+                    MenuView { menuItem in
+                        viewModel.handleMenuItemTapped(menuItem)
+                    }
+                    .presentationDetents([.medium, .fraction(0.18)])
                 }
-            }
+            }            
         }
+        .preferredColorScheme(.dark)
     }
 }
 

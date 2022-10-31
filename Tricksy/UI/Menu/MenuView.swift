@@ -10,10 +10,16 @@ import SwiftUI
 struct MenuView: View {
     @Environment(\.dismiss) private var dismiss
     
-    var viewModel = MenuViewModel()
+    @ObservedObject var viewModel = MenuViewModel()
+    
+    init(menuItemTapped: ((_ menuItem: MenuItem) -> ())? = nil) {
+        self.viewModel = MenuViewModel(menuItemTapped: menuItemTapped)
+    }
     
     var body: some View {
-        NavigationStack {
+        ZStack {
+            Color.black.edgesIgnoringSafeArea(.all)
+            //        NavigationStack {
             List (viewModel.menuItems) { menuItem in
                 HStack {
                     Image(systemName: menuItem.icon)
@@ -22,19 +28,35 @@ struct MenuView: View {
                     Text(menuItem.displayText)
                         .foregroundColor(Color(menuItem.displayColor))
                 }
-                .listRowBackground(Color.appDark)
+                .listRowBackground(Color.black)
+                .listRowSeparator(.hidden)
                 .onTapGesture {
-                    dismiss()
+                    if viewModel.handleMenuItemTapped(menuItem) {
+                        dismiss()
+                    }
                 }
             }
-            .navigationTitle("Options")
-            .toolbarColorScheme(.dark, for: .navigationBar)
-            .toolbarBackground(Color.black, for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
+            .listStyle(.plain)
             .scrollContentBackground(.hidden)
-            .background(Color.black)
+            .padding(.top, 16)
+            //            .navigationTitle("Options")
+            //            .toolbarColorScheme(.dark, for: .navigationBar)
+            //            .toolbarBackground(Color.black, for: .navigationBar)
+            //            .toolbarBackground(.visible, for: .navigationBar)
+            //            .scrollContentBackground(.hidden)
+            //            .background(Color.black)
+            //        }
+            .background(Color.black.edgesIgnoringSafeArea(.all))
+            .alert("Reset All Data?", isPresented: $viewModel.showingResetAlert, actions: {
+                Button("Remove Data", role: .destructive) {
+                    viewModel.resetAllData()
+                    dismiss()
+                }
+                Button("Cancel", role: .cancel) { }
+            }, message: {
+                Text("This will permanently remove all trick-or-treat data.")
+            })
         }
-        .presentationDetents([.medium, .fraction(0.34)])
     }
 }
 

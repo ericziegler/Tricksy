@@ -45,8 +45,29 @@ class TreatViewModel: ObservableObject {
     }
     
     func removeLastTreat() {
+        if treatNight.deliveryTimes.count == 0 {
+            return
+        }
         treatNight.deliveryTimes.removeLast()
         service.saveTreats(treatNight)
+    }
+    
+    func removeAllData() {
+        treatNight.deliveryTimes.removeAll()
+        service.saveTreats(treatNight)
+    }
+    
+    // MARK: - Menu Actions
+    
+    func handleMenuItemTapped(_ menuItem: MenuItem) {
+        switch menuItem {
+        case .graph:
+            print("GRAPH")
+        case .undoLastTreat:
+            removeLastTreat()
+        case .resetAll:
+            removeAllData()
+        }
     }
     
 }

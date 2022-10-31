@@ -14,5 +14,26 @@ class MenuViewModel: ObservableObject {
         MenuItem.undoLastTreat,
         MenuItem.resetAll
     ]
+    @Published var showingResetAlert = false
+    
+    var menuItemTapped: ((_ menuItem: MenuItem) -> ())?
+    
+    init(menuItemTapped: ((_ menuItem: MenuItem) -> ())? = nil) {
+        self.menuItemTapped = menuItemTapped
+    }
+    
+    func handleMenuItemTapped(_ menuItem: MenuItem) -> Bool {
+        if menuItem == .resetAll {
+            showingResetAlert = true
+            return false
+        } else {
+            menuItemTapped?(menuItem)
+            return true
+        }
+    }
+    
+    func resetAllData() {
+        menuItemTapped?(.resetAll)
+    }
     
 }
